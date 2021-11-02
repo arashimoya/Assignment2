@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,28 @@ namespace WebAPI.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<User>> Register([FromBody] User user)
+        {
+           
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                User added = await userService.RegisterUser(user);
+                return Created($"{added.Username}", added);
+            }
+            catch (Exception e)
+            {
+                
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
             }
         }
         

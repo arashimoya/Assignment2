@@ -1,0 +1,62 @@
+[
+  {
+    "JobTitle": {
+      "JobTitle": "Junior Developer",
+      "Salary": 20000
+    },
+    "Id": 1,
+    "FirstName": "Adam",
+    "LastName": "Ara",
+    "HairColor": "Blonde",
+    "EyeColor": "Blue",
+    "Age": 20,
+    "Weight": 70,
+    "Height": 188,
+    "Sex": "M"
+  },
+  {
+    "JobTitle": {
+      "JobTitle": "IT support",
+      "Salary": 20000
+    },
+    "Id": 2,
+    "FirstName": "Tomek",
+    "LastName": "Maj",
+    "HairColor": "Black",
+    "EyeColor": "Bronze",
+    "Age": 21,
+    "Weight": 70,
+    "Height": 175,
+    "Sex": "M"
+  },
+  {
+    "JobTitle": {
+      "JobTitle": "string",
+      "Salary": 0
+    },
+    "Id": 3,
+    "FirstName": "string",
+    "LastName": "string",
+    "HairColor": "string",
+    "EyeColor": "string",
+    "Age": 0,
+    "Weight": 0,
+    "Height": 0,
+    "Sex": "string"
+  },
+  {
+    "JobTitle": {
+      "JobTitle": "string",
+      "Salary": 0
+    },
+    "Id": 4,
+    "FirstName": "string",
+    "LastName": "string",
+    "HairColor": "string",
+    "EyeColor": "string",
+    "Age": 0,
+    "Weight": 0,
+    "Height": 0,
+    "Sex": "string"
+  }
+]

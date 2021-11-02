@@ -40,11 +40,10 @@
         errorMessage = "";
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateRegister(username, password, confirmPassword);
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateRegister(username, password, confirmPassword);
             username = "";
             password = "";
             confirmPassword = "";
-            NavigationManager.NavigateTo("/register");
         }
         catch (Exception e)
         {

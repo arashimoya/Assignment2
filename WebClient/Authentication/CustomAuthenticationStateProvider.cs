@@ -82,7 +82,6 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider {
         if (string.IsNullOrEmpty(username)) throw new Exception("Enter username");
         if (string.IsNullOrEmpty(password)) throw new Exception("Enter password");
         if (string.IsNullOrEmpty(confirmPassword)) throw new Exception("Confirm password");
-        if (await userService.DoesUsernameAlreadyExist(username)) throw new Exception("This username is already taken");
         if (!password.Equals(confirmPassword)) throw new Exception("Passwords do not match!");
         
         await userService.RegisterUser(username,password);

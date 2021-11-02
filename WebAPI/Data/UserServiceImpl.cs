@@ -37,14 +37,27 @@ namespace WebAPI.Data
             throw new Exception("User not found!");
         }
 
-        public Task RegisterUser(string username, string password)
+        public async Task<User> RegisterUser(User user)
         {
-            throw new NotImplementedException();
+            if (UsernameAlreadyExist(user)) throw new Exception("This username already exists!");
+            users.Add(user);
+            WriteUsersToFile();
+            return user;
         }
 
-        public Task<bool> DoesUsernameAlreadyExist(string username)
+
+        private bool UsernameAlreadyExist(User user)
         {
-            throw new NotImplementedException();
+            bool toReturn = false;
+            User toCompare = users.FirstOrDefault(u => u.Username == user.Username);
+            
+            //ignore case
+            toCompare.Username = toCompare.Username.ToLower();
+            user.Username = user.Username.ToLower();
+            
+            if (toCompare.Username.Equals(user.Username))
+                toReturn = true;
+            return toReturn;
         }
 
         public async Task<IList<User>> GetAllAsync()

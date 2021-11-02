@@ -47,7 +47,12 @@ namespace WebAPI.Data
             HttpContent content = new StringContent(userAsJson,
                 Encoding.UTF8,
                 "application/json");
+            
+            HttpResponseMessage response =
             await client.PostAsync("https://localhost:5003/users", content);
+
+            if (response.StatusCode != HttpStatusCode.Created)
+                throw new Exception("This user is already taken!");
 
         }
 
