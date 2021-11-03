@@ -7,6 +7,6 @@ namespace WebAPI.Data
     {
         Task<User> ValidateLogin(string username, string password); 
         Task RegisterUser(string username, string password);
-        Task<bool> DoesUsernameAlreadyExist(string username);
+        
     }
 }

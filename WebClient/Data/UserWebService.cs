@@ -55,10 +55,5 @@ namespace WebAPI.Data
                 throw new Exception("This user is already taken!");
 
         }
-
-        public Task<bool> DoesUsernameAlreadyExist(string username)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
